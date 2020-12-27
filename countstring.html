@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTf-8" name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    </head>
+    <style type="text/css">
+        body {
+            font-family: helveticaneuew01-45ligh, helveticaneuew02-45ligh, helveticaneuew10-45ligh, sans-serif;
+        }
+    </style>
+    <body>
+        <div style="text-align: center;">
+            <h3>JavaScript - Count Total Letters In A String</h3>
+
+            <textarea class="form-control" style="resize: none; height: 150px;" id="textInput"></textarea>
+        </div>
+        <center>
+            <button class="btn btn-primary" onclick="countLetter();">Count</button>
+            <center>
+                <h4>Bannyaknya huruf : <span id="result"></span></h4>
+            </center>
+        </center>
+
+        <script src="js/script.js"></script>
+        <script type="text/javascript">
+            // this code with triger click
+            //     function countLetter() {
+            //            var str=document.getElementById("textInput").value;
+
+            //             if(str==""){
+            //                 alert("Please enter something first!");
+            //             }else{
+            //                 var letters = 0;
+            //                 var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            //                 var ar = alphabet.split("");
+            //                 for (var i=0; i<str.length;i++) {
+            //                     if (ar.indexOf(str[i]) > -1) {
+            //                         letters = letters + 1;
+            //                     }
+            //                 }
+            //            }
+            //     document.getElementById('result').innerHTML="<center><h4>There are total of <span class='text-primary'>"+letters+"</span> letters in a given string.</h4></center>";
+            // }
+
+            var textInputElement = document.getElementById("textInput");
+            textInputElement.addEventListener("keyup", function () {
+                var text = textInputElement.value;
+                var letters = 0;
+                var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                var ar = alphabet.split("");
+                for (var i = 0; i < text.length; i++) {
+                    if (ar.indexOf(text[i]) > -1) {
+                        letters = letters + 1;
+                    }
+                }
+
+                // console.log('New text is "' + letters + '"');
+                document.getElementById("result").innerHTML = "" + letters + "";
+            });
+        </script>
+    </body>
+</html>
