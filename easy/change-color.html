@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTf-8" name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    </head>
+    <style type="text/css">
+        body {
+            font-family: helveticaneuew01-45ligh, helveticaneuew02-45ligh, helveticaneuew10-45ligh, sans-serif;
+        }
+    </style>
+    <body>
+        <h1 id="heading">This is a heading</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <hr>
+    <div>
+        <label>Ubah Background Webpage:</label>
+        <button type="button" onclick="changeBodyBg('yellow');">Yellow</button>
+        <button type="button" onclick="changeBodyBg('lime');">Lime</button>
+        <button type="button" onclick="changeBodyBg('orange');">Orange</button>
+    </div>
+    <br>
+    <div>
+        <label>Ubah Background heading:</label>
+        <button type="button" onclick="changeHeadingBg('red');">Red</button>
+        <button type="button" onclick="changeHeadingBg('green');">Green</button>
+        <button type="button" onclick="changeHeadingBg('blue');">Blue</button>
+    </div>
+
+        <button type="button" onclick="resetColor();">Reset</button>
+        <button type="button" onclick="setRandomColor();">Random</button>
+
+         
+        <script type="text/javascript">
+              // Function to change webpage background color
+		    function changeBodyBg(color){
+		        document.body.style.background = color;
+		    }
+		    
+		    // Function to change heading background color
+		    function changeHeadingBg(color){
+		        document.getElementById("heading").style.background = color;
+		    }
+		    function resetColor(){
+		    	document.body.style.background = 'white';
+		    	document.getElementById("heading").style.background = 'white';
+		    }
+
+		    function getRandomColor(){
+		    	var letters = '0123456789ABCDEF';
+		    	var color ='#';
+		    	for (var i = 0; i < 6 ; i++) {
+		    		color += letters[Math.floor(Math.random() * 16)];
+		    	}
+		    	return color;
+		    }
+
+		    function setRandomColor(){
+		    	document.body.style.background = getRandomColor();
+		    }
+
+
+        </script>
+    </body>
+</html>
