@@ -1,0 +1,25 @@
+<script>
+      function getDuration(src, cb) {
+        var audio = new Audio();  
+        audio.src = src; 
+        $(audio).on("loadedmetadata", function(){ 
+            var minutes = parseInt(audio.duration / 60, 10);
+            var seconds = parseInt(audio.duration % 60);
+            if (seconds < 10){ seconds = '0'+seconds; }
+            if (minutes < 10){ minutes = '0'+minutes; }
+            var durasi =  minutes+":"+seconds;
+            cb(durasi);
+           // console.log(durasi);
+        });     
+    }
+
+
+  var alldur = $('.duration-time');
+  alldur.each(function(){
+    var srcs = $(this).attr('src-mp3');
+    var nums = $(this).attr('num');
+    getDuration(srcs,  function(e){
+      $(`.durtime${nums}`).text(e);
+    });
+  });
+</script>
